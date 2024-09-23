@@ -9,6 +9,8 @@
 
 ## 🚀 Quick start
 
+<!-- On npm installs: --legacy-peer-deps -->
+
 1.  **Create a Gatsby site.**
 
     Use the Gatsby CLI to create a new site, specifying the minimal starter.

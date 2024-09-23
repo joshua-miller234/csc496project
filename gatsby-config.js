@@ -6,7 +6,8 @@ module.exports = {
     title: `CSC496 Project Joshua Miller`,
     siteUrl: `https://www.yourdomain.tld`
   },
-  plugins: ["gatsby-plugin-styled-components", "gatsby-plugin-mdx", {
+  plugins: ["gatsby-plugin-image",
+    "gatsby-plugin-sharp","gatsby-plugin-styled-components", "gatsby-plugin-mdx", {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "pages",
