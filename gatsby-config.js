@@ -3,12 +3,13 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `CSC496 Project - Joshua Miller`,
+    title: `My Gatsby Site`,
     siteUrl: `https://www.yourdomain.tld`
   },
   plugins: 
   [
     "gatsby-plugin-image","gatsby-plugin-sharp","gatsby-plugin-styled-components", "gatsby-plugin-mdx", 
+    "gatsby-transformer-sharp",
     {
       resolve: 'gatsby-source-filesystem',
       // options: {
