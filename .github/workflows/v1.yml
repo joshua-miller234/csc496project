@@ -29,10 +29,9 @@ jobs:
 
       - name: copy file via ssh key
         uses: appleboy/scp-action@master
-        env:
+        with:
           host:  ${{ secrets.Host }}
           key: ${{ secrets.Key }}
           port:  ${{ secrets.Port }}
-        with:
           source: "public/"
           target: "/home/student03/html"
