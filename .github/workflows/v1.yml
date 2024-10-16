@@ -36,3 +36,4 @@ jobs:
           port:  ${{ secrets.Port }}
           source: "public/*"
           target: "/home/student03/site/html"
+          strip_components: 1
