@@ -13,10 +13,10 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: '13.x'
+          node-version: '20.x'
 
       - name: Install Project Dependencies
-        run: npm install --legacy-peer-deps
+        run: npm install
 
       - name: Install Gatsby CLI
         run: npm install -g gatsby-cli@2.12.34
