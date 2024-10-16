@@ -31,6 +31,7 @@ jobs:
         uses: appleboy/scp-action@master
         with:
           host:  ${{ secrets.Host }}
+          username: ${{ secrets.User }}
           key: ${{ secrets.Key }}
           port:  ${{ secrets.Port }}
           source: "public/"
