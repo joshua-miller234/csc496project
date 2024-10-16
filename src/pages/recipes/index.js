@@ -1,21 +1,24 @@
 import * as React from 'react'
 import Layout from '../../components/layout'
 import Seo from '../../components/seo'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 
-const BlogPage = ({data}) => {
+const RecipePage = ({data}) => {
   return (
     <Layout pageTitle="List of Recipe Titles">
-        <ol>
+        <ol style={{paddingLeft: '30px'}}>
             {
             data.Drupal.nodeRecipes.nodes.map((node) => (
-            <article key={node.id}>
-                <h1>
-                    <li>
-                        {node.title}
-                    </li>
-                </h1>
-            </article>
+              <Link to={`${node.path}`}>
+                <article key={node.id}>
+                  <li style={{color: 'black', fontSize: '25px'}}>
+                    <h1 style={{fontSize: '25px', color: 'blue'}}>
+                          <div>{node.title}</div>
+                    </h1>
+                    <div style={{fontSize: '15px'}}>Cooking Time: {node.cookingTime}</div>
+                  </li>
+                </article>
+              </Link>
             ))
         }
       </ol>
@@ -30,6 +33,9 @@ export const query = graphql`
     nodeRecipes(first: 10) {
       nodes {
         title
+        path
+        id
+        cookingTime
       }
     }
   }
@@ -39,4 +45,4 @@ export const query = graphql`
 
 export const Head = () => <Seo title="Recipe List" />
 
-export default BlogPage
+export default RecipePage

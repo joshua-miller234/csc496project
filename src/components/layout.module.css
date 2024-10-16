@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+  font-family: "Quicksand";
+}
+
 .container {
     margin: auto;
     max-width: 600px;
@@ -5,26 +11,76 @@
   }
 
   .heading {
-    color: rebeccapurple;
+    color: rgb(193, 16, 247);
+    font-size: 40px;
   }
 
   .nav-links {
     display: flex;
     list-style: none;
     padding-left: 0;
+    
   }
 
   .nav-link-item {
-    padding-right: 3rem;
+    padding: 10px;
+    padding-left: 0px;
+    max-width: 600px;
+    margin: 0 auto;
+    border-bottom: 1px solid #d6cfcf;
+    
   }
 
   .nav-link-text {
     color: black;
   }
 
+  .nav-link-item:hover{
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+  }
+
   .site-title {
     font-size: 3rem;
     color: gray;
     font-weight: 700;
-    margin: 3rem 0;
+    margin: 2rem 0;
   }
+
+ol{
+  padding: 0px;
+}
+
+.boxed-link{
+  padding: 20px;
+  padding-left: 20px;
+  justify-items: right;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  border-bottom: 1px solid #d6cfcf;
+}
+.boxed-link:hover{
+  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+}
+
+a:visited{
+  color:blue;
+  text-decoration: none;
+}
+a:link{
+  color:blue;
+  text-decoration: none;
+}
+
+li{
+  padding: 20px;
+  justify-items: right;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  border-bottom: 1px solid #d6cfcf;
+}
+
+li:hover{
+  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+}
