@@ -27,20 +27,12 @@ jobs:
       - name: Verify build
         run: ls -la public
 
-      - name: executing remote ssh commands using ssh key
-        uses: appleboy/ssh-action@v1.1.0
-        with:
-          host: ${{ secrets.Host }}
-          username: ${{ secrets.User }}
-          key: ${{ secrets.Key }}
-          port: ${{ secrets.Port }}
-          script: ls -al
-
       - name: copy file via ssh key
-        uses: appleboy/ssh-action@v1.1.0
+        uses: appleboy/scp-action@master
         with:
           host:  ${{ secrets.Host }}
           username: ${{ secrets.User }}
           key: ${{ secrets.Key }}
           port:  ${{ secrets.Port }}
-          script: ${{secrets.Script}}
+          source: "public/*"
+          target: "/home/student03/site/html"
