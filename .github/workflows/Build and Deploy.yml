@@ -28,7 +28,7 @@ jobs:
         run: ls -la public
 
 
-      - name: copy files via ssh key
+      - name: copy files via ssh key to temporary folder
         uses: appleboy/scp-action@master
         with:
           host:  ${{ secrets.Host }}
@@ -48,3 +48,12 @@ jobs:
           key: ${{ secrets.Key }}
           port:  ${{ secrets.Port }}
           script: ${{secrets.Script}}
+
+      - name: clean up
+        uses: appleboy/ssh-action@v1.1.0
+        with:
+          host:  ${{ secrets.Host }}
+          username: ${{ secrets.User }}
+          key: ${{ secrets.Key }}
+          port:  ${{ secrets.Port }}
+          script: rm ./site/public -r
