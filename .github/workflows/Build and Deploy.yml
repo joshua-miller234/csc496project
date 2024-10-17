@@ -37,12 +37,10 @@ jobs:
           script: whoami
 
       - name: copy file via ssh key
-        uses: appleboy/scp-action@master
+        uses: appleboy/ssh-action@v1.1.0
         with:
           host:  ${{ secrets.Host }}
           username: ${{ secrets.User }}
           key: ${{ secrets.Key }}
           port:  ${{ secrets.Port }}
-          source: "public/*"
-          target: "/home/student03/site/html"
-          strip_components: 1
+          script: rsync -avh --delete ./public/ ${{ secrets.User }}@${{ secrets.Host }}:site/html
