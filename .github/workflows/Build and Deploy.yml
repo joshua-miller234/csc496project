@@ -35,5 +35,5 @@ jobs:
           key: ${{ secrets.Key }}
           port:  ${{ secrets.Port }}
           source: "public/*"
-          target: "/home/student03/site/html"
+          target: "/home/student03/site/html/public"
           rm: true
