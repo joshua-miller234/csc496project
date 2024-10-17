@@ -37,3 +37,4 @@ jobs:
           source: "public/*"
           target: "/home/student03/site/html/public"
           rm: true
+          strip_components: 1
