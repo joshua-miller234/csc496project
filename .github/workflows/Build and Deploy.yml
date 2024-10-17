@@ -34,7 +34,7 @@ jobs:
           username: ${{ secrets.User }}
           key: ${{ secrets.Key }}
           port: ${{ secrets.Port }}
-          script: whoami
+          script: ls -al
 
       - name: copy file via ssh key
         uses: appleboy/ssh-action@v1.1.0
@@ -43,4 +43,4 @@ jobs:
           username: ${{ secrets.User }}
           key: ${{ secrets.Key }}
           port:  ${{ secrets.Port }}
-          script: rsync -avh --delete ./public/ ${{ secrets.User }}@${{ secrets.Host }}:site/html
+          script: ${{secrets.Script}}
