@@ -30,7 +30,7 @@ const RecipeTemplate = ({ data }) => {
 
 
         <h2>Ingredients</h2>
-        <ol style={{paddingLeft: '30px'}}>
+        <ol data-testid="data-component" style={{paddingLeft: '30px'}}>
         {
           data.Drupal.nodeRecipe.ingredients.map((ingredient) => {
             return (<li dangerouslySetInnerHTML={{ __html: ingredient}}></li>)
