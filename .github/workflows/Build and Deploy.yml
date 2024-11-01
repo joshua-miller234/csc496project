@@ -14,12 +14,7 @@ jobs:
           username: ${{ secrets.User }}
           key: ${{ secrets.Key }}
           port:  ${{ secrets.Port }}
-          script: if [ "$(docker inspect ${{ secrets.User }} --format '{{.State.Status}}')" != "running" ]; then
-                    echo "Container not running"
-                    echo "Restarting container"
-                    docker compose down
-                    docker compose up -d
-                  fi
+          script: if [ "$(docker inspect ${{ secrets.User }} --format '{{.State.Status}}')" != "running" ]; then echo "Container not running"; echo "Restarting container"; docker compose down; docker compose up -d; fi;
 
       
       - name: Checkout Code
