@@ -39,15 +39,6 @@ jobs:
           rm: true
           strip_components: 1
 
-      - name: sync to correct directory
-        uses: appleboy/ssh-action@v1.1.0
-        with:
-          host:  ${{ secrets.Host }}
-          username: ${{ secrets.User }}
-          key: ${{ secrets.Key }}
-          port:  ${{ secrets.Port }}
-          script: rsync -ah --delete ./site/temp/ ./site/html2
-
       - name: swap containers files
         uses: appleboy/ssh-action@v1.1.0
         with:
