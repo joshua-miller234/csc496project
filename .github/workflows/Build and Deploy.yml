@@ -46,7 +46,7 @@ jobs:
           username: ${{ secrets.User }}
           key: ${{ secrets.Key }}
           port:  ${{ secrets.Port }}
-          script: mv html html3 && mv html2 html && mv html3 html2
+          script: mv ./site/html ./site/html3 && mv ./site/html2 ./site/html && mv ./site/html3 ./site/html2
 
       - name: clean up / delete old container files
         uses: appleboy/ssh-action@v1.1.0
