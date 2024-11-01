@@ -35,7 +35,7 @@ jobs:
           key: ${{ secrets.Key }}
           port:  ${{ secrets.Port }}
           source: "public/*"
-          target: "/home/${{ secrets.User }}/site/temp"
+          target: "/home/${{ secrets.User }}/site/html2"
           rm: true
           strip_components: 1
 
@@ -46,13 +46,22 @@ jobs:
           username: ${{ secrets.User }}
           key: ${{ secrets.Key }}
           port:  ${{ secrets.Port }}
-          script: ${{secrets.Script}}
+          script: rsync -ah --delete ./site/temp/ ./site/html2
 
-      - name: clean up
+      - name: swap containers files
         uses: appleboy/ssh-action@v1.1.0
         with:
           host:  ${{ secrets.Host }}
           username: ${{ secrets.User }}
           key: ${{ secrets.Key }}
           port:  ${{ secrets.Port }}
-          script: rm ./site/temp -r
+          script: mv html html3 && mv html2 html && mv html3 html2
+
+      - name: clean up / delete old container files
+        uses: appleboy/ssh-action@v1.1.0
+        with:
+          host:  ${{ secrets.Host }}
+          username: ${{ secrets.User }}
+          key: ${{ secrets.Key }}
+          port:  ${{ secrets.Port }}
+          script: rm ./site/html2 -r

@@ -10,7 +10,7 @@ const ArticleTemplate = ({ data }) => {
       <Layout pageTitle={data.Drupal.nodeArticle.title}>
         <p>Author: {data.Drupal.nodeArticle.author.displayName}</p>
         <p>Created: {new Date(data.Drupal.nodeArticle.created).toDateString()}</p>
-        <p><img src={data.Drupal.nodeArticle.mediaImage.mediaImage.url} style={{width: '100%', minHeight: '400px'}}></img></p>
+        <p><img src={data.Drupal.nodeArticle.mediaImage.mediaImage.url} alt={`Hero image for article ${data.Drupal.nodeArticle.title}`} style={{width: '100%', minHeight: '400px'}}></img></p>
         <p dangerouslySetInnerHTML={{ __html: data.Drupal.nodeArticle.body.processed}}></p>
       </Layout>
     </>)

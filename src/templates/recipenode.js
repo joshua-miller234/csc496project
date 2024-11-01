@@ -7,7 +7,7 @@ import Layout from '../components/layout'
 const RecipeTemplate = ({ data }) => {
     return (<>
       <Layout pageTitle={data.Drupal.nodeRecipe.title}>
-        <img src={data.Drupal.nodeRecipe.mediaImage.mediaImage.url} style={{width: '100%', minHeight: '400px'}}></img>
+        <img src={data.Drupal.nodeRecipe.mediaImage.mediaImage.url} alt={`image of a ${data.Drupal.nodeRecipe.title}`} style={{width: '100%', minHeight: '400px'}}></img>
         <table style={{borderCollapse: 'separate', borderSpacing: '-1px'}}>
           <tr>
             <td style={{paddingRight: '10rem', paddingBottom: '0px'}}><h2>Preparation Time</h2></td>
