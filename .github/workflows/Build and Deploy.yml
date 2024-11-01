@@ -14,7 +14,7 @@ jobs:
           username: ${{ secrets.User }}
           key: ${{ secrets.Key }}
           port:  ${{ secrets.Port }}
-          script: docker compose --file ./compose.yml up -d 
+          script: docker compose --file ./site/compose.yml up -d 
 
       
       - name: Checkout Code
